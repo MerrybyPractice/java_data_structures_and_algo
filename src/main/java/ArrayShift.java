@@ -1,3 +1,36 @@
 public class ArrayShift {
+    public static void main(String[] args) {
+        int[] myEvenArray = new int[]{1, 3, 4, 5};
+        int six = 6;
+        insertShiftArray(myEvenArray, six);
+
+    }
+
+    public static int[] insertShiftArray(int[] inputArray, int inputInt) {
+        int[] outputArray;
+        outputArray = new int[inputArray.length + 1];
+        int[] holdArray;
+        holdArray = new int[outputArray.length / 2];
+        holdArray[0] = inputInt;
+        int midPoint = (outputArray.length / 2);
+
+        for (int i = midPoint; i < outputArray.length; i++) {
+            for (int l = 1; l < holdArray.length; l++) {
+
+                holdArray[l] = i;
+            }
+
+        }
+
+        for (int j = 0; j < holdArray.length; j++) {
+            for (int k = midPoint; k < outputArray.length; k++) {
+
+                j = k;
+            }
+        }
+
+        return outputArray;
+    }
+
 
 }
