@@ -4,11 +4,38 @@
 package LinkedList;
 
 public class LinkedList {
-    public String getGreeting() {
-        return "Hello world.";
+
+    LinkedList() {
+        this.head = null;
+
+        public static void insert ( int value){
+
+            this.head = new Node(value, this.head);
+
+
+        }
+
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+    //head property - upon insstantiation, an empty linked list should be created
+    //head should be aware of default empty value assigned to head when list is instantiated
+    //method called insert which takes any value as an argeument and adds a new node with that value to the head of hte list
+    //includes which takes any value as an arguement and returns a boolean if that value exsists as a node value somewhere in the list
+    //print which takes no arguements, but returns a collection of all node values in the list
+
+    //no exception or stack trace should be shown to end user -- friendly error handling with try catch and quaint messages
+
+
+}
+
+
+public class Node {
+
+    Node(int value, String refrence) {
+        this.value = value;
+        this.refrence = refrence;
     }
+
+
 }
