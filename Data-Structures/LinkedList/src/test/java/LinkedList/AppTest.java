@@ -4,11 +4,51 @@
 package LinkedList;
 
 import org.junit.Test;
+
+
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+
+    String one = "one";
+    String two = "two";
+    String three = "three";
+    String four = "four";
+
+    @Test
+    public void testLinkedListHead() {
+        LinkedList testList = new LinkedList(one);
+
+        Object testHead = testList.head.reference;
+
+        assertEquals(testHead, null);
+    }
+
+    @Test
+    public void testInsert() {
+        LinkedList testList = new LinkedList(one);
+        System.out.println(testList.includes(one));
+        Object endOfList = testList.head;
+
+        testList.insert(two);
+
+        assertEquals(testList.head.reference, endOfList);
+        assertEquals(testList.head.value, two);
+
+        testList.insert(three);
+
+        assertEquals(testList.head.value, three);
+        assertEquals(testList.head.reference.reference.value, one);
+    }
+
+    @Test
+    public void testIncludes() {
+        LinkedList testList = new LinkedList(one);
+        testList.insert(two);
+        testList.insert(three);
+        testList.insert(four);
+
+        assertTrue(testList.includes(one));
+        assertFalse(testList.includes("Seven"));
     }
 }
