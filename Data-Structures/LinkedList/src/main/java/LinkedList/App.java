@@ -7,20 +7,16 @@ public class App {
 
     public static void main(String[] args) {
 
-        String getGreeting = "Hello World";
+        checkLinkedList("my Rad String");
 
-        System.out.println(getGreeting);
-        checkLinkedList("my rad string");
     }
 
     public static void checkLinkedList(String value) {
         LinkedList testList = new LinkedList(value);
-        System.out.println(testList.head.value);
 
         testList.insert("another good string");
 
-        System.out.println(testList.head.value);
-        System.out.println(testList.head.reference);
+        testList.includes("my Rad String");
 
     }
 }

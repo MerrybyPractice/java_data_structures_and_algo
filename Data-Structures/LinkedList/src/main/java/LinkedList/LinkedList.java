@@ -22,10 +22,10 @@ public class LinkedList {
 
         boolean inThisList = false;
 
-        while (current.reference != null) {
-
+        while ((current != null) && (inThisList == false)) {
             if (current.value != value) {
                 current = current.reference;
+
             } else if (current.value == value) {
                 inThisList = true;
             }
@@ -39,7 +39,7 @@ public class LinkedList {
 
         ArrayList<String> printList = new ArrayList<>();
 
-        while (current.reference != null) {
+        while (current != null) {
             printList.add(current.value);
             current = current.reference;
         }

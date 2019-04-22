@@ -6,6 +6,8 @@ package LinkedList;
 import org.junit.Test;
 
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
@@ -19,9 +21,8 @@ public class AppTest {
     public void testLinkedListHead() {
         LinkedList testList = new LinkedList(one);
 
-        Object testHead = testList.head.reference;
-
-        assertEquals(testHead, null);
+        assertEquals(testList.head.reference, null);
+        assertEquals(testList.head.value, one);
     }
 
     @Test
@@ -50,5 +51,24 @@ public class AppTest {
 
         assertTrue(testList.includes(one));
         assertFalse(testList.includes("Seven"));
+    }
+
+    @Test
+    public void testPrint() {
+        LinkedList testList = new LinkedList(one);
+        testList.insert(two);
+        testList.insert(three);
+        testList.insert(four);
+
+        testList.print();
+
+        ArrayList<String> expectedReturn = new ArrayList<>();
+        expectedReturn.add(four);
+        expectedReturn.add(three);
+        expectedReturn.add(two);
+        expectedReturn.add(one);
+
+        assertEquals(testList.print(), expectedReturn);
+
     }
 }
