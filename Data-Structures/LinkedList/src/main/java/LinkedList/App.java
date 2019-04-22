@@ -12,7 +12,8 @@ public class App {
     }
 
     public static void checkLinkedList(String value) {
-        LinkedList testList = new LinkedList(value);
+        LinkedList testList = new LinkedList();
+        testList.insert(value);
 
         testList.insert("another good string");
 

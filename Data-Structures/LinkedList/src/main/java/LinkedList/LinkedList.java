@@ -6,10 +6,10 @@ import java.util.List;
 public class LinkedList {
 
     public NodeConstructor head;
-    public NodeConstructor newNode;
 
-    public LinkedList(String value) {
-        head = new NodeConstructor(value, null);
+
+    public LinkedList() {
+        head = null;
     }
 
     public void insert(String value) {

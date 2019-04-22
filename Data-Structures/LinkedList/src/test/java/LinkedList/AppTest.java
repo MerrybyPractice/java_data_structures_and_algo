@@ -5,7 +5,6 @@ package LinkedList;
 
 import org.junit.Test;
 
-
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -19,7 +18,8 @@ public class AppTest {
 
     @Test
     public void testLinkedListHead() {
-        LinkedList testList = new LinkedList(one);
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
 
         assertEquals(testList.head.reference, null);
         assertEquals(testList.head.value, one);
@@ -27,8 +27,8 @@ public class AppTest {
 
     @Test
     public void testInsert() {
-        LinkedList testList = new LinkedList(one);
-        System.out.println(testList.includes(one));
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
         Object endOfList = testList.head;
 
         testList.insert(two);
@@ -44,23 +44,33 @@ public class AppTest {
 
     @Test
     public void testIncludes() {
-        LinkedList testList = new LinkedList(one);
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
         testList.insert(two);
         testList.insert(three);
         testList.insert(four);
 
         assertTrue(testList.includes(one));
+        assertTrue(testList.includes(two));
+        assertTrue(testList.includes(three));
+        assertTrue(testList.includes(four));
         assertFalse(testList.includes("Seven"));
     }
 
     @Test
+    public void testEmptyIncludes() {
+        LinkedList testList = new LinkedList();
+
+        assertFalse(testList.includes(one));
+    }
+
+    @Test
     public void testPrint() {
-        LinkedList testList = new LinkedList(one);
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
         testList.insert(two);
         testList.insert(three);
         testList.insert(four);
-
-        testList.print();
 
         ArrayList<String> expectedReturn = new ArrayList<>();
         expectedReturn.add(four);
@@ -70,5 +80,14 @@ public class AppTest {
 
         assertEquals(testList.print(), expectedReturn);
 
+    }
+
+    @Test
+    public void testEmptyPrint() {
+        LinkedList testList = new LinkedList();
+
+        ArrayList<String> emptyReturn = new ArrayList<>();
+
+        assertEquals(emptyReturn, testList.print());
     }
 }
