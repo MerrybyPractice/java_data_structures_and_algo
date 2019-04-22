@@ -2,12 +2,12 @@ package LinkedList;
 
 import javax.annotation.Nullable;
 
-public class NodeConstructor {
+public class NodeConstructor<generic> {
 
     public NodeConstructor reference;
-    public String value;
+    public generic value;
 
-    public NodeConstructor(String value, @Nullable NodeConstructor reference) {
+    public NodeConstructor(generic value, @Nullable NodeConstructor reference) {
 
         this.value = value;
         this.reference = reference;

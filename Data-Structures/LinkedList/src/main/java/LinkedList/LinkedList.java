@@ -3,21 +3,21 @@ package LinkedList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LinkedList {
+public class LinkedList<generic> {
 
-    public NodeConstructor head;
+    public NodeConstructor<generic> head;
 
 
     public LinkedList() {
         head = null;
     }
 
-    public void insert(String value) {
+    public void insert(generic value) {
 
         this.head = new NodeConstructor(value, this.head);
     }
 
-    public boolean includes(String value) {
+    public boolean includes(generic value) {
         NodeConstructor current = this.head;
 
         boolean inThisList = false;
@@ -35,9 +35,9 @@ public class LinkedList {
 
     public List print() {
 
-        NodeConstructor current = this.head;
+        NodeConstructor<generic> current = this.head;
 
-        ArrayList<String> printList = new ArrayList<>();
+        ArrayList<generic> printList = new ArrayList<>();
 
         while (current != null) {
             printList.add(current.value);

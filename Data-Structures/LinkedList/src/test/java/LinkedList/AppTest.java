@@ -38,8 +38,26 @@ public class AppTest {
 
         testList.insert(three);
 
-        assertEquals(testList.head.value, three);
         assertEquals(testList.head.reference.reference.value, one);
+        assertEquals(testList.head.value, three);
+    }
+
+    @Test
+    public void testInsertInt() {
+        LinkedList testListInt = new LinkedList();
+        testListInt.insert(1);
+
+        Object endOfList = testListInt.head;
+
+        testListInt.insert(2);
+
+        assertEquals(testListInt.head.reference, endOfList);
+        assertEquals(testListInt.head.value, 2);
+
+        testListInt.insert(3);
+
+        assertEquals(testListInt.head.reference.reference.value, 1);
+        assertEquals(testListInt.head.value, 3);
     }
 
     @Test
@@ -55,6 +73,21 @@ public class AppTest {
         assertTrue(testList.includes(three));
         assertTrue(testList.includes(four));
         assertFalse(testList.includes("Seven"));
+    }
+
+    @Test
+    public void testIncludesInt() {
+        LinkedList testListInt = new LinkedList();
+        testListInt.insert(1);
+        testListInt.insert(2);
+        testListInt.insert(3);
+        testListInt.insert(4);
+
+        assertTrue(testListInt.includes(1));
+        assertTrue(testListInt.includes(2));
+        assertTrue(testListInt.includes(3));
+        assertTrue(testListInt.includes(4));
+        assertFalse(testListInt.includes(7));
     }
 
     @Test
@@ -79,6 +112,24 @@ public class AppTest {
         expectedReturn.add(one);
 
         assertEquals(testList.print(), expectedReturn);
+
+    }
+
+    @Test
+    public void testPrintInt() {
+        LinkedList testListInt = new LinkedList();
+        testListInt.insert(1);
+        testListInt.insert(2);
+        testListInt.insert(3);
+        testListInt.insert(4);
+
+        ArrayList<Integer> expectedReturn = new ArrayList<>();
+        expectedReturn.add(4);
+        expectedReturn.add(3);
+        expectedReturn.add(2);
+        expectedReturn.add(1);
+
+        assertEquals(testListInt.print(), expectedReturn);
 
     }
 
