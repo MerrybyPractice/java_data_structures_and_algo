@@ -12,37 +12,56 @@ import static org.junit.Assert.*;
 
 public class AppTest {
 
+    //creating global variables to be used in subsequent testing. Strictly for ease of writing.
     String one = "one";
     String two = "two";
     String three = "three";
     String four = "four";
 
+    //Testing instantiating an empty linked list, and adding one node.
     @Test
     public void testLinkedListHead() {
+        //creating the empty list
         LinkedList testList = new LinkedList();
+        //using the insert function to add a single node. I would expect that this node has a null reference.
         testList.insert(one);
 
+        //asserting that the head exists, and has a reference of null.
         assertEquals(testList.head.reference, null);
+        //asserting that the head exists, and has a value of one.
         assertEquals(testList.head.value, one);
     }
 
+    //testing the insert function. If this is functioning properly, I would expect each new node to be added in the head
+    //position of the list.
     @Test
     public void testInsert() {
+        //create the empty linked list
         LinkedList testList = new LinkedList();
+        //adding one node
         testList.insert(one);
+        //setting that node as a variable called the endOfList, to be used in later tests.
         Object endOfList = testList.head;
-
+        //adding a second node
         testList.insert(two);
 
+        //asserting that the head references the endOfList. I would expect this to return true, as there are only two nodes
+        //in the list at this point.
         assertEquals(testList.head.reference, endOfList);
+        //asserting that the head value equals two.
         assertEquals(testList.head.value, two);
 
+        //inserting a third node
         testList.insert(three);
 
-        assertEquals(testList.head.reference.reference.value, one);
+        //asserting that the endOfList node has now moved down the reference chain by one.
+        assertEquals(testList.head.reference.reference, endOfList);
+        //asserting that the head.value is now three.
         assertEquals(testList.head.value, three);
     }
 
+    //as this list is set up to accept Generic data types, I have replicated the insert tests with int's instead of strings
+    //these follow the same pattern and reasoning as the above tests.
     @Test
     public void testInsertInt() {
         LinkedList testListInt = new LinkedList();
@@ -57,25 +76,34 @@ public class AppTest {
 
         testListInt.insert(3);
 
-        assertEquals(testListInt.head.reference.reference.value, 1);
+        assertEquals(testListInt.head.reference.reference, endOfList);
         assertEquals(testListInt.head.value, 3);
     }
 
+    //This test tests the includes search function, and ensures that it is returning the expected boolean for several
+    //different cases.
     @Test
     public void testIncludes() {
+        //create an empty linked list
         LinkedList testList = new LinkedList();
+        //insert nodes one - four
         testList.insert(one);
         testList.insert(two);
         testList.insert(three);
         testList.insert(four);
 
+        //I would expect that the test would return true for .includes(values one-four), and so have written out assertsTrue
+        //tests to ensure that is the case here.
         assertTrue(testList.includes(one));
         assertTrue(testList.includes(two));
         assertTrue(testList.includes(three));
         assertTrue(testList.includes(four));
+        //this assertFalse case is included to confirm that it will return false when it does not find the target value.
         assertFalse(testList.includes("Seven"));
     }
 
+    //as this list is set up to accept Generic data types, I have replicated the includes tests with int's instead of strings
+    //these follow the same pattern and reasoning as the above tests.
     @Test
     public void testIncludesInt() {
         LinkedList testListInt = new LinkedList();
@@ -91,31 +119,48 @@ public class AppTest {
         assertFalse(testListInt.includes(7));
     }
 
+    //this test shows that when presented an empty linked list, the includes function will return false for any test value.
     @Test
     public void testEmptyIncludes() {
+        //creating an empty linked list
         LinkedList testList = new LinkedList();
 
+        //asserting that values "one", null, 0, and 1 will all return false
         assertFalse(testList.includes(one));
+        assertFalse(testList.includes(null));
+        assertFalse(testList.includes(0));
+        assertFalse(testList.includes(1));
     }
 
+    //to allow for testing, my print function returns an array list as well as System.out.println(arrayList)ing it.
+    //this test only tests the return values, and so it is feasible that some interaction could alter the print values and
+    //not the return values. This should be kept in mind when using this test to conduct root cause analysis, or other
+    //debugging activity.
     @Test
     public void testPrint() {
+        //instantiating an empty linked list
         LinkedList testList = new LinkedList();
+        //inserting nodes with the values one - four.
         testList.insert(one);
         testList.insert(two);
         testList.insert(three);
         testList.insert(four);
 
+        //instantiating an expectedReturn ArrayList for testing
         ArrayList<String> expectedReturn = new ArrayList<>();
+        //inserting the values one-four in the same order they will return from the linked list.
         expectedReturn.add(four);
         expectedReturn.add(three);
         expectedReturn.add(two);
         expectedReturn.add(one);
 
+        //asserting the return from the print() method matches the expectedReturn ArrayList.
         assertEquals(testList.print(), expectedReturn);
 
     }
 
+    //as this list is set up to accept Generic data types, I have replicated the print tests with int's instead of strings
+    //these follow the same pattern and reasoning as the above tests.
     @Test
     public void testPrintInt() {
         LinkedList testListInt = new LinkedList();
@@ -134,14 +179,19 @@ public class AppTest {
 
     }
 
+    //this test is designed to show that a test print will return an empty array list.
     @Test
     public void testEmptyPrint() {
+        //creating an empty linked list
         LinkedList testList = new LinkedList();
 
+        //creating an empty Array List for comparison
         ArrayList<String> emptyReturn = new ArrayList<>();
 
+        //asserting that the emptyReturn Array List matches the return from the .print() on the empty testList
         assertEquals(emptyReturn, testList.print());
     }
+
 
     @Test
     public void testAppend() {
