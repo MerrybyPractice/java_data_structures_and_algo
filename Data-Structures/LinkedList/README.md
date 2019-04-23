@@ -39,6 +39,21 @@ time. I believe that these should be O(n) - as at the worst case they will need 
     By calling the print method on an exsisiting list, a user can view the values of said list in the Terminal. 
     Additionally, an ArrayList of the LinkedList will be returned to the spot the user called from. 
     
+ ### append(value) 
+    LinkedList.append(value)
+    A user can insert a node at the null end of the list with a value equal to the passed in value. The refrence of this
+    new node will be null. 
+ 
+ ### insertBefore(node value, target value) 
+    LinkedList.insertBefore(node value, target value) 
+    The insertBefore method takes in a node value and target value, searches for the target value, and inserts the
+    node value as a new node on the head side of the list of the target value.
+    
+ ### insertAfter(node value, target value)
+    LinkedList.insertAfter(node value, target value)
+    The insertAfter method takes in a node value and target value, searches for the target value, and inserts the
+    node value as a new node on the null side of the list of the target value.
+    
  ### head 
     LinkedList.head
     A user can access the current head using this property. 

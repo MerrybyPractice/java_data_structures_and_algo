@@ -193,18 +193,84 @@ public class AppTest {
     }
 
 
+    //test the append function. I would expect this to insert a node on the null side of the list, so that it's refrence becomes null.
     @Test
     public void testAppend() {
+        //create an empty linked list
         LinkedList testList = new LinkedList();
+
+        //insert nodes with values one and two
         testList.insert(one);
         testList.insert(two);
+        //append a node with the value three
         testList.append(three);
 
+        //check that the final value in the linked list has a value of three
         assertEquals(three, testList.head.reference.reference.value);
+        //check that the reference of the final node in the list is null
         assertEquals(null, testList.head.reference.reference.reference);
     }
 
+    //this replicates the tests above, but uses int's and only insert's a single value before taking on an append.
+    //it is designed to prove that the append method only needs one node inserted prior to it becoming a viable option.
+    @Test
+    public void testSingleAppend() {
+        //create an empty linked list
+        LinkedList testSingleList = new LinkedList();
 
+        //insert a single value
+        testSingleList.insert(1);
+
+        //append an int
+        testSingleList.append(2);
+
+        assertEquals(2, testSingleList.head.reference.value);
+        assertEquals(null, testSingleList.head.reference.reference);
+    }
+
+    @Test
+    public void testMultiAppend() {
+        //create an empty linked list and insert a single node
+        LinkedList testMultiList = new LinkedList();
+        testMultiList.insert(one);
+
+        //append three subsequent values, testing that each has a refrence of null as we go.
+        testMultiList.append(two);
+        assertEquals(null, testMultiList.head.reference.reference);
+        assertEquals(two, testMultiList.head.reference.value);
+
+        testMultiList.append(three);
+        assertEquals(null, testMultiList.head.reference.reference.reference);
+        assertEquals(three, testMultiList.head.reference.reference.value);
+
+        testMultiList.append(four);
+        assertEquals(null, testMultiList.head.reference.reference.reference.reference);
+        assertEquals(four, testMultiList.head.reference.reference.reference.value);
+    }
+
+    //the append function is intended to be used once a list already has nodes, and so I wanted to demonstrate what happens
+    //when you try and append to an empty list.
+    @Test
+    public void testEmptyAppend() {
+        //create an empty linked list
+        LinkedList testEmptyList = new LinkedList();
+
+        try {
+            //append a value to the empty list
+            testEmptyList.append(one);
+
+            //as the append is designed to be used with a extant list, where it will insert to the end
+            //I would expect this to throw a null pointer exception.
+        } catch (NullPointerException ex) {
+
+            //if this function is running correctly, it will throw a null pointer exception when you try to append to an
+            //empty list. In this case, I may suggest using the insert method to create a head.
+            assertTrue(ex instanceof NullPointerException);
+        }
+    }
+
+    //the insertBefore method takes in a node value and target value, searches for the target value, and inserts the
+    //node value as a new node on the head side of the list of the target value.
     @Test
     public void testInsertBefore() {
         LinkedList testList = new LinkedList();
@@ -212,12 +278,12 @@ public class AppTest {
         testList.insert(two);
         testList.insertBefore(three, one);
 
-        System.out.println("testInsertBefore" + testList.print());
-
         assertTrue(testList.includes(three));
         assertEquals(three, testList.head.reference.value);
     }
 
+    //the insertAfter method takes in a node value and target value, searches for the target value, and inserts the
+    //node value as a new node on the null side of the list of the target value.
     @Test
     public void testInsertAfter() {
         LinkedList testList = new LinkedList();
@@ -225,6 +291,9 @@ public class AppTest {
         testList.insert(two);
         testList.insertAfter(three, one);
 
-        System.out.println("testInsertAfter" + testList.print());
+        assertTrue(testList.includes(three));
+        assertEquals(three, testList.head.reference.reference.value);
     }
+
+
 }

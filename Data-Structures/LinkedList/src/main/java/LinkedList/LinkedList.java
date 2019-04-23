@@ -59,9 +59,18 @@ public class LinkedList<generic> {
 
         NodeConstructor<generic> newNode = new NodeConstructor<>(value, null);
 
-        current.reference = newNode;
+        try {
+            current.reference = newNode;
+        } catch (NullPointerException ex) {
+            System.out.println("I see that you are trying to append a node to an empty list. Instead of using the append method for this operation, I would recommend you try the insert method instead, to create an initial head. I am sure you will find that it meets your needs more thoroughly than append in this case. Once you have a single node created, you are able to use append with abandon.");
+        }
     }
 
+
+    /**
+     * the insertBefore method takes in a node value and target value, searches for the target value, and inserts the
+     * node value as a new node on the head side of the list of the target value.
+     */
     public void insertBefore(generic value, generic target) {
         NodeConstructor<generic> current = this.head;
 
@@ -74,6 +83,10 @@ public class LinkedList<generic> {
         current.reference = newNode;
     }
 
+    /**
+     * the insertAfter method takes in a node value and target value, searches for the target value, and inserts the
+     * node value as a new node on the null side of the list of the target value.
+     */
     public void insertAfter(generic value, generic target) {
         NodeConstructor<generic> current = this.head;
 
