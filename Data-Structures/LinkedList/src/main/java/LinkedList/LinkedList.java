@@ -72,7 +72,6 @@ public class LinkedList<generic> {
         NodeConstructor<generic> newNode = new NodeConstructor<generic>(value, current.reference);
 
         current.reference = newNode;
-
     }
 
     public void insertAfter(generic value, generic target) {

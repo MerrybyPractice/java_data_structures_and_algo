@@ -160,11 +160,21 @@ public class AppTest {
         LinkedList testList = new LinkedList();
         testList.insert(one);
         testList.insert(two);
-        testList.insert(three);
-        testList.insertBefore(four, three);
+        testList.insertBefore(three, one);
 
-        System.out.println(testList);
+        System.out.println("testInsertBefore" + testList.print());
 
-        //assertTrue(testList.includes(four));
+        assertTrue(testList.includes(three));
+        assertEquals(three, testList.head.reference.value);
+    }
+
+    @Test
+    public void testInsertAfter() {
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
+        testList.insert(two);
+        testList.insertAfter(three, one);
+
+        System.out.println("testInsertAfter" + testList.print());
     }
 }
