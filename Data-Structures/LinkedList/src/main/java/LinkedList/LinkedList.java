@@ -1,5 +1,6 @@
 package LinkedList;
 
+import javax.xml.soap.Node;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,5 +47,42 @@ public class LinkedList<generic> {
 
         System.out.println(printList);
         return printList;
+    }
+
+    public void append(generic value) {
+
+        NodeConstructor<generic> current = this.head;
+
+        while (current.reference != null) {
+            current = current.reference;
+        }
+
+        NodeConstructor<generic> newNode = new NodeConstructor<>(value, null);
+
+        current.reference = newNode;
+    }
+
+    public void insertBefore(generic value, generic target) {
+        NodeConstructor<generic> current = this.head;
+
+        while (current.reference.value != target) {
+            current = current.reference;
+        }
+
+        NodeConstructor<generic> newNode = new NodeConstructor<generic>(value, current.reference);
+
+        current.reference = newNode;
+
+    }
+
+    public void insertAfter(generic value, generic target) {
+        NodeConstructor<generic> current = this.head;
+
+        while (current.value != target) {
+            current = current.reference;
+        }
+
+        NodeConstructor newNode = new NodeConstructor(value, current.reference);
+        current.reference = newNode;
     }
 }

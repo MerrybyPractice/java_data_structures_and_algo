@@ -5,6 +5,7 @@ package LinkedList;
 
 import org.junit.Test;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -140,5 +141,30 @@ public class AppTest {
         ArrayList<String> emptyReturn = new ArrayList<>();
 
         assertEquals(emptyReturn, testList.print());
+    }
+
+    @Test
+    public void testAppend() {
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
+        testList.insert(two);
+        testList.append(three);
+
+        assertEquals(three, testList.head.reference.reference.value);
+        assertEquals(null, testList.head.reference.reference.reference);
+    }
+
+
+    @Test
+    public void testInsertBefore() {
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
+        testList.insert(two);
+        testList.insert(three);
+        testList.insertBefore(four, three);
+
+        System.out.println(testList);
+
+        //assertTrue(testList.includes(four));
     }
 }
