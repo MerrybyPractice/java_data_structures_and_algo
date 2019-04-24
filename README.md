@@ -6,3 +6,6 @@
         ![whiteboard](./assets/57274443_2248355075425569_8806547144405155840_n.jpg)
 3. [Linked List](https://github.com/MerrybyPractice/java_data_structures_and_algo/pull/7)
     ![whiteboard](./Data-Structures/LinkedList/assets/LinkedListInserts_thumb_3ebb.jpg)
+4. [kth From the End Search](https://github.com/MerrybyPractice/java_data_structures_and_algo/pull/8)
+    ![whiteboard](./Data-Structures/LinkedList/assets/LinkedListsKfromtheEnd.jpeg)
+    
