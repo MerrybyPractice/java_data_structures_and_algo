@@ -1,5 +1,6 @@
 public class ArrayShift {
     public static void main(String[] args) {
+
         int[] myEvenArray = new int[]{1, 3, 4, 5};
         int six = 6;
         System.out.println(insertShiftArray(myEvenArray, six));
@@ -8,6 +9,9 @@ public class ArrayShift {
         int nine = 9;
         System.out.println(insertShiftArray(myOddArray, nine));
 
+        int[] myEmptyArray = new int[]{};
+        int zero = 0;
+        System.out.println(insertShiftArray(myEmptyArray, zero));
     }
 
     public static int[] insertShiftArray(int[] inputArray, int inputInt) {
@@ -23,7 +27,6 @@ public class ArrayShift {
 
                 holdArray[l] = i;
             }
-
         }
 
         for (int j = 0; j < holdArray.length; j++) {
@@ -32,9 +35,6 @@ public class ArrayShift {
                 j = k;
             }
         }
-
         return outputArray;
     }
-
-
 }
