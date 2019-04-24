@@ -4,6 +4,7 @@
 package LinkedList;
 
 import org.junit.Test;
+import sun.awt.image.ImageWatched;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -295,5 +296,60 @@ public class AppTest {
         assertEquals(three, testList.head.reference.reference.value);
     }
 
+    //happy path
+    @Test
+    public void testKthFromTheEndSearch() {
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
+        testList.insert(two);
+        testList.insert(three);
+        testList.insert(four);
 
+        Object searchValue = testList.kthFromTheEndSearch(1);
+
+        assertEquals(two, searchValue);
+    }
+
+    //K is grater than the length of the list
+
+    @Test
+    public void testKthFromTheEndKGreater() {
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
+        testList.insert(two);
+        testList.insert(three);
+        testList.insert(four);
+
+        try {
+            testList.kthFromTheEndSearch(5);
+        } catch (NullPointerException ex) {
+            assertTrue(ex instanceof NullPointerException);
+        }
+
+    }
+
+    // k = the length of the list
+    @Test
+    public void kEqualsLengthOfList() {
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
+        testList.insert(two);
+        testList.insert(three);
+        testList.insert(four);
+
+        Object searchValue = testList.kthFromTheEndSearch(4);
+
+        assertEquals(null, searchValue);
+    }
+
+    //linked list has a size 1
+    @Test
+    public void sizeOneList() {
+        LinkedList testList = new LinkedList();
+        testList.insert(one);
+
+        Object searchValue = testList.kthFromTheEndSearch(0);
+
+        assertEquals(one, searchValue);
+    }
 }
