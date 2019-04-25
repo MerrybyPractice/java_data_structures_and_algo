@@ -20,4 +20,9 @@ public class App {
         testList.includes("my Rad String");
 
     }
+
+    public static void checkMergeLinkedLists() {
+
+        LinkedList
+    }
 }
