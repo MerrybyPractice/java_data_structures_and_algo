@@ -18,60 +18,60 @@ time. I believe that these should be O(n) - as at the worst case they will need 
 
  ## API 
  
- ### LinkedList()
+ ### linkedlist()
     When this method is called, an empty linked list is created. When a new node is added to this list, 
     it will automatically have a refrence value of null.
     
  ### insert(value)
-    LinkedList.insert(value)
+    linkedlist.insert(value)
     By passing a value into Insert, a user can create a new node in the linked list that will have a value equal to that
     value. This node will become the new head node in the list. The Node Constructor class attached to this method is
     set up so that it will be able to handle any type of value passed into it. Refer to the test suite
     for examples of it handling Objects and primitives. 
     
  ### includes(value) 
-    LinkedList.includes(value)
+    linkedlist.includes(value)
     A user can pass a sinble value into the includes method and recieve a boolean, 
     true if the value is in the list, false if it is not. 
     
  ### print
-    LinkedList.print 
+    linkedlist.print 
     By calling the print method on an exsisiting list, a user can view the values of said list in the Terminal. 
-    Additionally, an ArrayList of the LinkedList will be returned to the spot the user called from. 
+    Additionally, an ArrayList of the linkedlist will be returned to the spot the user called from. 
     
  ### append(value) 
-    LinkedList.append(value)
+    linkedlist.append(value)
     A user can insert a node at the null end of the list with a value equal to the passed in value. The refrence of this
     new node will be null. 
  
  ### insertBefore(node value, target value) 
-    LinkedList.insertBefore(node value, target value) 
+    linkedlist.insertBefore(node value, target value) 
     The insertBefore method takes in a node value and target value, searches for the target value, and inserts the
     node value as a new node on the head side of the list of the target value.
     
  ### insertAfter(node value, target value)
-    LinkedList.insertAfter(node value, target value)
+    linkedlist.insertAfter(node value, target value)
     The insertAfter method takes in a node value and target value, searches for the target value, and inserts the
     node value as a new node on the null side of the list of the target value.
     
 ### kthFromTheEndSearch(int k)
-    LinkedList.kthFromTheEndSearch(); 
+    linkedlist.kthFromTheEndSearch(); 
     
     
  ### head 
-    LinkedList.head
+    linkedlist.head
     A user can access the current head using this property. 
  
  ### value 
-    LinkedList.head.value 
+    linkedlist.head.value 
     A user can access the value of a given node using this property. 
  
  ### reference 
-    LinkedList.head.refrence 
+    linkedlist.head.refrence 
     A user can access the refrence of a given node using this property. 
     By chaining it, one can traverse cross nodes to target specific values or refrences relative to the head. 
-    LinkedList.head.refrence.refrence.value 
-    LinkedList.head.refrence.revrence.refrence 
+    linkedlist.head.refrence.refrence.value 
+    linkedlist.head.refrence.revrence.refrence 
    
     
     
