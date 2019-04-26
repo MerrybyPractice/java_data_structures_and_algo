@@ -54,6 +54,10 @@ time. I believe that these should be O(n) - as at the worst case they will need 
     The insertAfter method takes in a node value and target value, searches for the target value, and inserts the
     node value as a new node on the null side of the list of the target value.
     
+### kthFromTheEndSearch(int k)
+    LinkedList.kthFromTheEndSearch(); 
+    
+    
  ### head 
     LinkedList.head
     A user can access the current head using this property. 

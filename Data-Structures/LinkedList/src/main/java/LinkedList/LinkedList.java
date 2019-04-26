@@ -97,4 +97,31 @@ public class LinkedList<generic> {
         NodeConstructor newNode = new NodeConstructor(value, current.reference);
         current.reference = newNode;
     }
+
+    /**
+     * the kthFromTheEndSearch takes in a value k and searches thr
+     */
+    public generic kthFromTheEndSearch(int k) {
+        NodeConstructor<generic> current = this.head;
+
+        ArrayList<generic> linkedListArrayList = new ArrayList<>();
+
+        while (current != null) {
+            linkedListArrayList.add((generic) current);
+            current = current.reference;
+        }
+
+//        NodeConstructor<generic> test = new NodeConstructor(6, null);
+        generic returnValue = null;
+
+        current = this.head;
+        for (int i = linkedListArrayList.size() - 1; i >= k; i--) {
+
+            if (i == k) {
+                returnValue = current.value;
+            }
+            current = current.reference;
+        }
+        return returnValue;
+    }
 }
