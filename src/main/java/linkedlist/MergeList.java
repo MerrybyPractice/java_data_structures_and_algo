@@ -1,44 +1,51 @@
 package linkedlist;
 
-public class MergeList<generic> {
+public class MergeList {
 
     public static NodeConstructor mergeLists(LinkedList L1, LinkedList L2) {
 
-        NodeConstructor currentL1;
-        NodeConstructor currentL2;
+        NodeConstructor currentL1 = null;
+        NodeConstructor currentL2 = null;
 
         try {
             currentL1 = L1.head;
         } catch (NullPointerException ex) {
-            return L2.head;
+            L2.head = L1.head;
+
         }
         try {
             currentL2 = L2.head;
         } catch (NullPointerException ex) {
-            return L1.head;
+            L1.head = L2.head;
         }
 
         NodeConstructor l1Next = currentL1;
         NodeConstructor l2Next = currentL2;
 
-        while (true) {
+        boolean breakWhileLoop = true;
+
+        while (breakWhileLoop) {
 
             try {
                 l1Next = currentL1.reference;
             } catch (NullPointerException ex) {
-                if (currentL1.reference == null) {
-                   currentL1.reference = currentL2;
-                } else if (currentL2.reference == null) {
+                if (currentL1 == null) {
+                    currentL1.reference = currentL2;
+                    break;
+                } else if (currentL2 == null) {
                     currentL2.reference = currentL1;
+                    break;
                 }
             }
             try {
                 l2Next = currentL2.reference;
             } catch (NullPointerException ex) {
-                if (currentL1.reference == null) {
-                    currentL1.reference = currentL2;
-                } else if (currentL1.reference == null) {
+                if (currentL2 == null) {
                     currentL2.reference = currentL1;
+                    break;
+                } else if (currentL1 == null) {
+                    currentL2.reference = currentL1;
+                    break;
                 }
             }
 
@@ -47,7 +54,11 @@ public class MergeList<generic> {
 
             currentL1 = l1Next;
             currentL2 = l2Next;
-        }
 
+            if (currentL1 == null || currentL2 == null) {
+                breakWhileLoop = false;
+            }
+        }
+        return L1.head;
     }
 }

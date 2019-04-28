@@ -1,6 +1,6 @@
 package linkedlist;
 
-import javax.annotation.Nullable;
+import com.sun.istack.internal.*;
 
 public class NodeConstructor<generic> {
 
