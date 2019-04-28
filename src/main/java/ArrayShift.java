@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ArrayShift {
     public static void main(String[] args) {
 
@@ -9,12 +11,12 @@ public class ArrayShift {
         int nine = 9;
         System.out.println(insertShiftArray(myOddArray, nine));
 
-        int[] myEmptyArray = new int[]{};
-        int zero = 0;
-        System.out.println(insertShiftArray(myEmptyArray, zero));
+//        int[] myEmptyArray = new int[]{};
+//        int zero = 0;
+//        System.out.println(insertShiftArray(myEmptyArray, zero));
     }
 
-    public static int[] insertShiftArray(int[] inputArray, int inputInt) {
+    public static String insertShiftArray(int[] inputArray, int inputInt) {
         int[] outputArray;
         outputArray = new int[inputArray.length + 1];
         int[] holdArray;
@@ -35,6 +37,6 @@ public class ArrayShift {
                 j = k;
             }
         }
-        return outputArray;
+        return Arrays.toString(outputArray);
     }
 }

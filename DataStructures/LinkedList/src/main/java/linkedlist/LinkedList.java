@@ -1,6 +1,5 @@
-package LinkedList;
+package linkedlist;
 
-import javax.xml.soap.Node;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -123,5 +122,9 @@ public class LinkedList<generic> {
             current = current.reference;
         }
         return returnValue;
+
+
     }
+
+
 }
