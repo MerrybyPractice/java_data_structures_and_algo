@@ -1,4 +1,4 @@
-#Data Structures and Algorithms, the Java Version 
+# Data Structures and Algorithms, the Java Version 
 
 1. [ArrayShift](./src/main/java/ArrayShift.java)
     ![whiteboard](./assets/IMG_1614.jpeg)
