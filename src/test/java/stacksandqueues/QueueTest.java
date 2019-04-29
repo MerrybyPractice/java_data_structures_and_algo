@@ -1,10 +1,13 @@
 package stacksandqueues;
 
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class QueueTest {
     //enqueue
-    public static void testEnqueue() {
+    @Test
+    public void testEnqueue() {
         Queue testQueue = new Queue();
         testQueue.enqueue(1);
         testQueue.enqueue(2);
