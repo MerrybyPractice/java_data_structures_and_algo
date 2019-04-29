@@ -8,7 +8,6 @@ import org.junit.Test;
 import static linkedlist.MergeList.mergeLists;
 import static org.junit.Assert.*;
 
-import com.sun.istack.internal.Nullable;
 
 import java.util.ArrayList;
 
