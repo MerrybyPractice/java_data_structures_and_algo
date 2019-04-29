@@ -1,7 +1,5 @@
 package stacksandqueues;
 
-import sun.net.www.content.text.Generic;
-
 import javax.annotation.Nullable;
 
 public class NodeConstructor<Generic> {

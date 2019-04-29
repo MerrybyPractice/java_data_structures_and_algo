@@ -1,11 +1,11 @@
 package stacksandqueues;
 
 public class Stack<Generic> {
+
     public NodeConstructor<Generic> top;
 
     public Stack() {
         top = null;
-
     }
 
     public void push(Generic value) {

@@ -5,19 +5,33 @@ public class Queue<Generic> {
     public NodeConstructor<Generic> rear;
 
     public Queue() {
-        rear = new NodeConstructor(null, null);
-        front = new NodeConstructor(null, this.rear);
-
+        rear = null;
+        front = null;
     }
 
     public void enqueue(Generic value) {
-        rear = new NodeConstructor(value, this.rear);
+        NodeConstructor nodeAdded = new NodeConstructor(value, null);
+        if (this.rear == null) {
+            rear = nodeAdded;
+        } else {
+            rear.reference = nodeAdded;
+            rear = nodeAdded;
+        }
+
+        if (this.front == null) {
+            front = nodeAdded;
+        }
 
     }
 
     public Generic dequeue() {
         NodeConstructor<Generic> returnValue = this.front;
-        this.front = front.reference;
+        if (this.front.reference == null) {
+            this.rear = null;
+            this.front = null;
+        } else {
+            this.front = front.reference;
+        }
         return returnValue.value;
     }
 
