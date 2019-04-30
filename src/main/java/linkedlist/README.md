@@ -56,6 +56,10 @@ time. I believe that these should be O(n) - as at the worst case they will need 
     
 ### kthFromTheEndSearch(int k)
     linkedlist.kthFromTheEndSearch(); 
+
+### MergeList(LinkedList1, LinkedList2)
+    This method takes in two linked lists and "zippers" them together into one list. By reassigning the refrences, two 
+    lists become one and return the head of the first list input as an access point for the entire list. 
     
     
  ### head 

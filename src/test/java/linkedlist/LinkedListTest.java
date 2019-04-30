@@ -8,9 +8,11 @@ import org.junit.Test;
 import static linkedlist.MergeList.mergeLists;
 import static org.junit.Assert.*;
 
+import com.sun.istack.internal.Nullable;
+
 import java.util.ArrayList;
 
-public class AppTest {
+public class LinkedListTest {
 
     //creating global variables to be used in subsequent testing. Strictly for ease of writing.
     String one = "one";
@@ -19,7 +21,7 @@ public class AppTest {
     String four = "four";
 
     //Testing instantiating an empty linked list, and adding one node.
-   @Test
+    @Test
     public void testLinkedListHead() {
         //creating the empty list
         LinkedList testList = new LinkedList();
@@ -354,16 +356,25 @@ public class AppTest {
     }
 
     @Test
-    public void testMergeList(){
-       LinkedList l1 = new LinkedList();
-       l1.insert(one);
-       l1.insert(three);
+    public void testMergeList() {
+        LinkedList l1 = new LinkedList();
+        l1.insert(one);
+        l1.insert(three);
 
-       LinkedList l2 = new LinkedList();
-       l2.insert(two);
-       l2.insert(four);
+        LinkedList l2 = new LinkedList();
+        l2.insert(two);
+        l2.insert(four);
 
-        System.out.println(mergeLists(l1, l2));
-        
+        mergeLists(l1, l2);
+
+        //this series of asserts proves that in a happy path scenario, the mergeList function zippers the
+        //nodes from two linked lists together, establishing a head end and a null end.
+        assertEquals(three, l1.head.value);
+        assertEquals(four, l1.head.reference.value);
+        assertEquals(one, l1.head.reference.reference.value);
+        assertEquals(two, l1.head.reference.reference.reference.value);
+        assertEquals(null, l1.head.reference.reference.reference.reference);
+
     }
+
 }
