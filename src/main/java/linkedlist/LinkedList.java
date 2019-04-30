@@ -100,7 +100,7 @@ public class LinkedList<generic> {
     /**
      * the kthFromTheEndSearch takes in a value k and searches thr
      */
-    public generic kthFromTheEndSearch(int k) {
+    public generic kthFromTheEndSearch(int k) throws NullPointerException {
         NodeConstructor<generic> current = this.head;
 
         ArrayList<generic> linkedListArrayList = new ArrayList<>();
@@ -125,6 +125,4 @@ public class LinkedList<generic> {
 
 
     }
-
-
 }
