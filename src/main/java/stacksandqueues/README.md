@@ -42,6 +42,21 @@ structure. The Method's on each class should all be O1.
 
 #### peek()
     Returns the value of the front node. 
+    
+### PseudoQueue Class 
+
+#### PseudoQueue() 
+    
+    Creates a pseudo queue consisting of two protected stacks, which has access to all of the Stack method's and properties. 
+
+#### enqueue(Generic value)
+    
+    This utilizes the push method on the "rear" stack, and pushes the value onto the top of it.
+    
+#### dequeue()
+    
+    Dequeue moves the stack from the "rear" stack to the "front" stack, and pops the top off of it. Then, the stack is 
+    moved back over to the "rear" stack for storage. 
 
 ### NodeConstructor class  
 

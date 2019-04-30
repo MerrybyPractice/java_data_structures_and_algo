@@ -20,7 +20,7 @@ public class PseudoQueueTest {
         assertEquals(1, testPseudoQueue.s2.top.reference.value);
 
     }
-    
+
     //dequeue happy path
     @Test
     public void testDequeue() {

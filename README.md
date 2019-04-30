@@ -11,4 +11,7 @@
         This is the whiteboard the final version of my merge lists method is based off of.
         ![whiteboard0n2](./assets/MergeListOn2.jpg)
         This is an earlier version of the whiteboard, created with Dana Voros, which does not meet the On space requirement
-        of the challenge. Ultimately this was refactored via a second whiteboard and some adjustments while coding it out.   
+        of the challenge. Ultimately this was refactored via a second whiteboard and some adjustments while coding it out.  
+    [PseudoQueue](./src/main/java/stacksandqueues/PseudoQueue.java)
+        ![whiteboardpt1](./assets/pseudoqueue1.jpg)
+        ![whiteboardpt2](./assets/pseudoqueue2.jpg) 
