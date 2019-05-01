@@ -10,8 +10,13 @@ public class FIFOAnimalShelter<Animal> {
     Queue<Animal> holdingShelter = new Queue<>();
 
 
-    public void enqueue(Animal stray) {
-        shelter.enqueue(stray);
+    public boolean enqueue(Animal stray) {
+        if (stray == Cat.class || stray == Dog.class) {
+            shelter.enqueue(stray);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Animal dequeue(@Nullable Animal pet) {

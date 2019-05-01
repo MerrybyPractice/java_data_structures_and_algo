@@ -14,4 +14,11 @@
         of the challenge. Ultimately this was refactored via a second whiteboard and some adjustments while coding it out.  
     [PseudoQueue](./src/main/java/stacksandqueues/PseudoQueue.java)
         ![whiteboardpt1](./assets/pseudoqueue1.jpg)
-        ![whiteboardpt2](./assets/pseudoqueue2.jpg) 
+        ![whiteboardpt2](./assets/pseudoqueue2.jpg)
+    [FIFO Animals](./src/main/java/stacksandqueues/fifoanimalshelter) 
+        ![whiteboard v1](./assets/IMG_1689.jpeg)
+        
+        ![whiteboard v2](./assets/IMG_1690.jpeg)
+        
+        ![whiteboard v3](./assets/IMG_1691.jpeg)
+        
