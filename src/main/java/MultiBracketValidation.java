@@ -1,5 +1,5 @@
 public class MultiBracketValidation {
-    public boolean multiBracketValidation(String input) {
+    public static boolean multiBracketValidation(String input) {
         char[] inputArray = input.toCharArray();
 
         int paren = 0;
@@ -33,6 +33,7 @@ public class MultiBracketValidation {
 
             if (paren < 0 || square < 0 || curly < 0) {
                 returnValue = false;
+                break;
             } else {
                 returnValue = true;
             }

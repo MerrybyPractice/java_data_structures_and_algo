@@ -12,13 +12,23 @@
         ![whiteboard0n2](./assets/MergeListOn2.jpg)
         This is an earlier version of the whiteboard, created with Dana Voros, which does not meet the On space requirement
         of the challenge. Ultimately this was refactored via a second whiteboard and some adjustments while coding it out.  
-    [PseudoQueue](./src/main/java/stacksandqueues/PseudoQueue.java)
+4.  [PseudoQueue](./src/main/java/stacksandqueues/PseudoQueue.java)
         ![whiteboardpt1](./assets/pseudoqueue1.jpg)
         ![whiteboardpt2](./assets/pseudoqueue2.jpg)
-    [FIFO Animals](./src/main/java/stacksandqueues/fifoanimalshelter) 
+5.  [FIFO Animals](./src/main/java/stacksandqueues/fifoanimalshelter) 
         ![whiteboard v1](./assets/IMG_1689.jpeg)
-        
         ![whiteboard v2](./assets/IMG_1690.jpeg)
-        
         ![whiteboard v3](./assets/IMG_1691.jpeg)
+6.  [Multi Bracket Validation](./src/main/java/MultiBracketValidation.java)
+        Given a string of brackets, this method will return a boolean - true if they are "balanced", false if they are not. 
+        ![whiteboard1](./assets/multibracketvalidationWB1.jpg)
+        ![whiteboard2](./assets/multibracketvalidaitonwb02.jpg)
+        ![whiteboard3](./assets/multibracketvalidationwb03.jpg)
+        
+     ### Approach and Efficiency  
+     I choose to use a switch statement with a while loop, as it was the first solution I could produce functional code 
+     for. Upon further reflection, I would alter this if I were to tackle this challenge again.  Given the while loop and
+     the for each, this will be On2 in every scenario, except for an early failure off of a negative. I am also creating 
+     an additional array, so that will be On for space. 
+        
         
