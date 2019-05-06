@@ -1,4 +1,4 @@
-#Data Structures and Algorithms, the Java Version 
+# Data Structures and Algorithms, the Java Version 
 
 1. [ArrayShift](./src/main/java/ArrayShift.java)
     ![whiteboard](./assets/IMG_1614.jpeg)
@@ -15,10 +15,11 @@
     [PseudoQueue](./src/main/java/stacksandqueues/PseudoQueue.java)
         ![whiteboardpt1](./assets/pseudoqueue1.jpg)
         ![whiteboardpt2](./assets/pseudoqueue2.jpg)
+
     [FIFO Animals](./src/main/java/stacksandqueues/fifoanimalshelter) 
         ![whiteboard v1](./assets/IMG_1689.jpeg)
-        
-        ![whiteboard v2](./assets/IMG_1690.jpeg)
-        
+        ![whiteboard v2](./assets/IMG_1690.jpeg
         ![whiteboard v3](./assets/IMG_1691.jpeg)
-        
+4. [kth From the End Search](https://github.com/MerrybyPractice/java_data_structures_and_algo/pull/8)
+    ![whiteboard](./Data-Structures/LinkedList/assets/LinkedListsKfromtheEnd.jpeg)
+  
