@@ -1,4 +1,4 @@
-#Data Structures and Algorithms, the Java Version 
+# Data Structures and Algorithms, the Java Version 
 
 1. [ArrayShift](./src/main/java/ArrayShift.java)
     ![whiteboard](./assets/IMG_1614.jpeg)
@@ -14,4 +14,8 @@
         of the challenge. Ultimately this was refactored via a second whiteboard and some adjustments while coding it out.  
     [PseudoQueue](./src/main/java/stacksandqueues/PseudoQueue.java)
         ![whiteboardpt1](./assets/pseudoqueue1.jpg)
-        ![whiteboardpt2](./assets/pseudoqueue2.jpg) 
+        ![whiteboardpt2](./assets/pseudoqueue2.jpg)
+        of the challenge. Ultimately this was refactored via a second whiteboard and some adjustments while coding it out.   
+4. [kth From the End Search](https://github.com/MerrybyPractice/java_data_structures_and_algo/pull/8)
+    ![whiteboard](./Data-Structures/LinkedList/assets/LinkedListsKfromtheEnd.jpeg)
+   
