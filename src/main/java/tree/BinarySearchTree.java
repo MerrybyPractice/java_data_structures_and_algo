@@ -42,8 +42,6 @@ public class BinarySearchTree extends BinaryTree {
         boolean returnStatement = false;
 
         if (current.value == value) {
-
-            System.out.println("Made it to 40 " + current.value);
         }
 
         while (returnStatement == false) {
