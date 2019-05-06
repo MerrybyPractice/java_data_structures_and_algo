@@ -10,8 +10,7 @@ public class BinarySearchTreeTest {
     @Test
     public void testAdd() {
 
-        BinarySearchTree testAdd = new BinarySearchTree();
-        testAdd.add(5);
+        BinarySearchTree testAdd = new BinarySearchTree(5);
 
         assertEquals(5, testAdd.root.value);
         System.out.println(testAdd.root.value);
@@ -33,8 +32,7 @@ public class BinarySearchTreeTest {
     //edge cases
     @Test
     public void edgeAdd() {
-        BinarySearchTree testAdd = new BinarySearchTree();
-        testAdd.add(5);
+        BinarySearchTree testAdd = new BinarySearchTree(5);
         testAdd.add(4);
         testAdd.add(6);
         testAdd.add(2);
@@ -45,14 +43,15 @@ public class BinarySearchTreeTest {
 
         assertNull(testAdd.root.rightChild.leftChild);
         assertNull(testAdd.root.rightChild.rightChild);
+
+        //I expect that the behavior noted above will be the same for the root as well.
+        testAdd.add(5);
+        assertEquals(4, testAdd.root.leftChild.value);
+        assertEquals(6, testAdd.root.rightChild.value);
     }
 
     //set up for contains
-    public BinarySearchTree testContains = new BinarySearchTree();
-
-    public void setUpContainsRoot() {
-        testContains.add(10);
-    }
+    public BinarySearchTree testContains = new BinarySearchTree(10);
 
     public void setUpContainsLeft() {
 
@@ -85,7 +84,6 @@ public class BinarySearchTreeTest {
     //happy path
     @Test
     public void testContains() {
-        setUpContainsRoot();
 
         assertTrue(testContains.contains(10));
         assertFalse(testContains.contains(1));
@@ -101,4 +99,5 @@ public class BinarySearchTreeTest {
         assertTrue(testContains.contains(20));
         assertFalse(testContains.contains(77));
     }
+
 }

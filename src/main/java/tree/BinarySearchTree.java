@@ -1,8 +1,13 @@
 package tree;
 
-import java.util.ArrayList;
-
 public class BinarySearchTree extends BinaryTree {
+
+    public BinarySearchTree(Integer value) {
+
+        if (root == null) {
+            this.root = new NodeConstructor(value);
+        }
+    }
 
     public void add(int value) {
 

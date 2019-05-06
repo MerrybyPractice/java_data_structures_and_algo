@@ -6,15 +6,6 @@ public class BinaryTree {
     public NodeConstructor root = null;
     public NodeConstructor current;
 
-    /*
-     * if if not root, create root
-     * current no left, current.left = nodeconstructor left
-     * current no right, current.right = nodeconstructor right
-     * else traverse left, then right - balanced
-     *
-     * check depth, new node goes on shallow side
-     *
-     * */
 
     public ArrayList preOrderTraversal(NodeConstructor current, ArrayList preOrderArray) {
 
@@ -61,6 +52,7 @@ public class BinaryTree {
             postOrderTraversal(current.rightChild, postOrderArray);
         }
 
+        postOrderArray.add(current.value);
         return postOrderArray;
     }
 }
