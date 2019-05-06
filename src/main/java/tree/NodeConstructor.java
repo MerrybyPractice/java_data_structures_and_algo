@@ -1,14 +1,13 @@
 package tree;
 
-public class NodeConstructor<T> {
 
-    public T value;
-    protected NodeConstructor leftChild;
-    protected NodeConstructor rightChild;
+public class NodeConstructor {
 
-    public NodeConstructor(T value, NodeConstructor leftChild, NodeConstructor rightChild) {
+    public int value;
+    protected NodeConstructor leftChild = null;
+    protected NodeConstructor rightChild = null;
+
+    public NodeConstructor(int value) {
         this.value = value;
-        this.leftChild = leftChild;
-        this.rightChild = rightChild;
     }
 }

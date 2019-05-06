@@ -1,12 +1,10 @@
 package tree;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
-
 import java.util.ArrayList;
 
-public class BinaryTree<T> {
-    public NodeConstructor<T> root;
-    public NodeConstructor<T> current;
+public class BinaryTree {
+    public NodeConstructor root = null;
+    public NodeConstructor current;
 
     /*
      * if if not root, create root
@@ -18,7 +16,7 @@ public class BinaryTree<T> {
      *
      * */
 
-    public ArrayList<T> preOrderTraversal(NodeConstructor<T> current, ArrayList<T> preOrderArray) {
+    public ArrayList preOrderTraversal(NodeConstructor current, ArrayList preOrderArray) {
 
         preOrderArray.add(current.value);
 
@@ -36,7 +34,7 @@ public class BinaryTree<T> {
 
     //inOrder traversal
 
-    public ArrayList<T> inOrderTraversal(NodeConstructor<T> current, ArrayList<T> inOrderArray) {
+    public ArrayList inOrderTraversal(NodeConstructor current, ArrayList inOrderArray) {
 
         if (current.leftChild != null) {
             inOrderTraversal(current.leftChild, inOrderArray);
@@ -53,7 +51,7 @@ public class BinaryTree<T> {
 
     //postOrder traversal
 
-    public ArrayList<T> postOrderTraversal(NodeConstructor<T> current, ArrayList<T> postOrderArray) {
+    public ArrayList postOrderTraversal(NodeConstructor current, ArrayList postOrderArray) {
 
         if (current.leftChild != null) {
             postOrderTraversal(current.leftChild, postOrderArray);
