@@ -29,6 +29,7 @@
      I choose to use a switch statement with a while loop, as it was the first solution I could produce functional code 
      for. Upon further reflection, I would alter this if I were to tackle this challenge again.  Given the while loop and
      the for each, this will be On2 in every scenario, except for an early failure off of a negative. I am also creating 
-     an additional array, so that will be On for space. 
+     an additional array, so that will be On for space.
+
         
         

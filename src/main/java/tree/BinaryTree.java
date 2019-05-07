@@ -11,7 +11,6 @@ public class BinaryTree {
 
         preOrderArray.add(current.value);
 
-
         if (current.leftChild != null) {
             preOrderTraversal(current.leftChild, preOrderArray);
         }
