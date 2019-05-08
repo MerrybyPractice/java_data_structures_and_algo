@@ -29,9 +29,10 @@
      I choose to use a switch statement with a while loop, as it was the first solution I could produce functional code 
      for. Upon further reflection, I would alter this if I were to tackle this challenge again.  Given the while loop and
      the for each, this will be On2 in every scenario, except for an early failure off of a negative. I am also creating 
-     an additional array, so that will be On for space.. 
+     an additional array, so that will be On for space. 
+     
 7. [kth From the End Search](https://github.com/MerrybyPractice/java_data_structures_and_algo/pull/8)
-    ![whiteboard](./Data-Structures/LinkedList/assets/LinkedListsKfromtheEnd.jpeg
+    ![whiteboard](./Data-Structures/LinkedList/assets/LinkedListsKfromtheEnd.jpeg)
     
 8. [FizzBuzz Tree]()
     ![whiteboard1](./assets/FizzBuzzPrep.jpeg)
@@ -45,6 +46,22 @@
    ## Approach & Efficiency
    I opted to use recursive iteration and if statements to accomplish this. I choose to use an in order traversal as I 
    felt it would produce an Array List with the best representation of the tree. As I am creating a new collection, space
-   will be 0(n) and time should just be 0(1). 
+   will be 0(n) and time should just be 0(1).
+
+9. [Breadth First Traversal](./src/main/java/tree/BreadthFirst.java) 
+    ![whiteboard1](./assets/breadthTraversalPrep.jpg)
+    ![whiteboard2](./assets/breadthTraversalCode.jpg)
+  Create a breadth first traversal that extends my BinaryTree class can be utilized with my other tree classes. 
+  
+  ## Challenge
+  In this challenge, I was asked to write a breadth first traversal to compliment my existing suite of tree traversals.
+  This traversal was required to take in an access point to a tree, and print the node values it came across.  
+  
+  ## Approach & Efficiency  
+  Initially I wanted to find a recursive way to accomplish this, and while I am sure there is a variation on the classic depth 
+  traversals that will accomplish that I ended up settling for a while loop. In my initial whiteboard I did not include 
+  a returned collection, but implemented an array list in my final code so that the whole thing was far more testable. As 
+  this approach uses a queue to track the node values and an array list to return them, its space will be O(n1), while it 
+  should only be O(n) for time due to the while loop.   
    
 
