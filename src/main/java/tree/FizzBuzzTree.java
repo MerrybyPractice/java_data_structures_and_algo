@@ -2,13 +2,14 @@ package tree;
 
 import java.util.ArrayList;
 
-public class FizzBuzzTree<Object> {
+public class FizzBuzzTree {
 
-    Object fizzBuzz = (Object) "FizzBuzz";
-    Object fizz = (Object) "Fizz";
-    Object buzz = (Object) "Buzz";
+    static Object fizzBuzz = "FizzBuzz";
+    static Object fizz = "Fizz";
+    static Object buzz = "Buzz";
 
-    public ArrayList<Object> fizzBuzzTree(NodeConstructor current, ArrayList<Object> fizzBuzzList) {
+    public static ArrayList<Object> fizzBuzzTree(NodeConstructor current, ArrayList<Object> fizzBuzzList) {
+
         if (current.leftChild != null) {
             fizzBuzzTree(current.leftChild, fizzBuzzList);
         }
@@ -20,8 +21,8 @@ public class FizzBuzzTree<Object> {
         } else if (current.value % 5 == 0) {
             fizzBuzzList.add(buzz);
         } else {
-            Integer currentInteger = (Integer) current.value;
-            Object currentObject = (Object) currentInteger;
+            Integer currentInteger = current.value;
+            Object currentObject = currentInteger;
             fizzBuzzList.add(currentObject);
         }
 
