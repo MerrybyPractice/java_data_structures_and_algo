@@ -6,7 +6,6 @@ public class BinaryTree {
     public NodeConstructor root = null;
     public NodeConstructor current;
 
-
     public ArrayList preOrderTraversal(NodeConstructor current, ArrayList preOrderArray) {
 
         preOrderArray.add(current.value);
