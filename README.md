@@ -29,6 +29,22 @@
      I choose to use a switch statement with a while loop, as it was the first solution I could produce functional code 
      for. Upon further reflection, I would alter this if I were to tackle this challenge again.  Given the while loop and
      the for each, this will be On2 in every scenario, except for an early failure off of a negative. I am also creating 
-     an additional array, so that will be On for space. 
-4. [kth From the End Search](https://github.com/MerrybyPractice/java_data_structures_and_algo/pull/8)
+     an additional array, so that will be On for space.. 
+7. [kth From the End Search](https://github.com/MerrybyPractice/java_data_structures_and_algo/pull/8)
     ![whiteboard](./Data-Structures/LinkedList/assets/LinkedListsKfromtheEnd.jpeg
+    
+8. [FizzBuzz Tree]()
+    ![whiteboard1](./assets/FizzBuzzPrep.jpeg)
+    ![whiteboard2](./assets/FizzBuzzTreeCode.jpeg)
+  Replicate the classic FizzBuzz challenge on a binary tree. 
+   
+   ## Challenge
+   The challenge here was to iterate over a binary tree and replace every value that was divisible by 3 with Fizz, every 
+   value that was divisable by 5 with Buzz, and every value that was divisible by both with FizzBuzz.  
+   
+   ## Approach & Efficiency
+   I opted to use recursive iteration and if statements to accomplish this. I choose to use an in order traversal as I 
+   felt it would produce an Array List with the best representation of the tree. As I am creating a new collection, space
+   will be 0(n) and time should just be 0(1). 
+   
+
