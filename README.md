@@ -63,5 +63,16 @@
   a returned collection, but implemented an array list in my final code so that the whole thing was far more testable. As 
   this approach uses a queue to track the node values and an array list to return them, its space will be O(n1), while it 
   should only be O(n) for time due to the while loop.   
+
+10. [Maximum Value of a Tree](./src/main/java/tree/findMaximumValue.java)
+    ![whiteboard](./assets/maxValue.jpeg)
+    ![whiteboard2](./assets/maxValue2.jpeg)
+    
+    ## Challenge 
+        Write a method that will sum the maximum value of the nodes in a tree. 
+
+    ## Approach and Efficiency 
+    I based this method closely on the FizzBuzz and Breadth First trees, employing a while loop to do the traversal and a
+    queue to do the traversal. It should have O(n) space and time efficiency.  
    
 
