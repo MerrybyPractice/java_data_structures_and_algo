@@ -74,5 +74,14 @@
     ## Approach and Efficiency 
     I based this method closely on the FizzBuzz and Breadth First trees, employing a while loop to do the traversal and a
     queue to do the traversal. It should have O(n) space and time efficiency.  
-   
 
+Lecture Series 
+
+A series of lecture notes on important algorithms and their accompanying implementations. These are all designed for an 
+intermediate student who is primarily familiar with JavaScript. 
+
+Lecture 1: [Insertion Sort](./src/main/java/insertionsort/insertionSortLecture.md) 
+           [Implementation](./src/main/java/insertionsort/InsertionSort.java) 
+   
+Lecture 2: [Merge Sort](./src/main/java/mergesort/lecture.md)
+           [Implementation](./src/main/java/mergesort/MergeSort.java) 
