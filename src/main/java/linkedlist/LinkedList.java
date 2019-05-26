@@ -49,13 +49,9 @@ public class LinkedList<generic> {
     }
 
     public void append(generic value) {
-
         if (this.head == null) {
-
-            insert(value);
-
+            this.insert(value);
         } else {
-
             NodeConstructor<generic> current = this.head;
 
             while (current.reference != null) {

@@ -10,6 +10,7 @@ public class BasicHashTest {
     @Test
     public void hashTest() {
         int testHash = hash("test");
+        int testHash2 = hash("test");
         int capitolHash = hash("Test");
         int emptyHash = hash("");
         int spacedHash = hash("this string has spaces");
@@ -22,5 +23,6 @@ public class BasicHashTest {
         assertEquals("Basic Hash failed on spaces", -2147483648, spacedHash);
         assertEquals("Basic Hash failed on characters", 556741296, characterHash);
         assertEquals("Basic Hash failed on numbers", 8176575, numberHash);
+        assertEquals("Identical Keys did not produce an identical hash", testHash, testHash2);
     }
 }
