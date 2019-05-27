@@ -11,6 +11,8 @@ public class BasicHash {
             index *= c;
         }
 
+        index *= 599;
+
         return index;
     }
 

@@ -1,11 +1,11 @@
 package hash;
 
-import linkedlist.LinkedList;
+import com.sun.tools.javac.util.GraphUtils;
 import linkedlist.NodeConstructor;
 
 public class Hashtable {
 
-    private static LinkedList[] buckets = new LinkedList[1024];
+    private static hash.LinkedList[] buckets = new hash.LinkedList[1024];
 
 
     public static class KeyValuePair {
@@ -21,7 +21,7 @@ public class Hashtable {
      */
     public void initializeHashTable() {
         for (int i = 0; i < buckets.length; i++) {
-            buckets[i] = new LinkedList<KeyValuePair>();
+            buckets[i] = new LinkedList();
         }
     }
 
@@ -67,7 +67,8 @@ public class Hashtable {
 
         //store the pair in the array at the proper given index
         System.out.println(index + key + value);
-        buckets[index].append(keyValuePair);
+        //TODO: check for null linked list, render init obsolete
+        buckets[index].insert(keyValuePair);
     }
 
     //get
@@ -78,9 +79,9 @@ public class Hashtable {
 
         //use the array index to access the short LinkedList representing a bucket
 
-        if (contains(inputKey)) {
-            NodeConstructor current = buckets[index].head;
-            //search through the bucket looking for a node with a key/value pair that matches the key you were given
+        if (buckets[index].includes(inputKey)) {
+            hash.LinkedList.Node current = buckets[index].getHead();
+
             if (current.keyValuePair.key != inputKey) {
                 current = current.reference;
             } else if (current.keyValuePair.key.equals(inputKey)) {
@@ -92,27 +93,25 @@ public class Hashtable {
             returnValue.value = "please try again with a different key";
         }
 
-
         return returnValue;
     }
+
 
     //contains
     public boolean contains(String key) {
 
         int index = findIndex(key);
 
-        NodeConstructor current = buckets[index].head;
+        LinkedList.Node current = buckets[index].getHead();
 
-        boolean inThisList = false;
-
-        while ((current != null) && (inThisList == false)) {
-            if (current.keyValuePair.key != key) {
+        while (current != null) {
+            if (!current.keyValuePair.key.equals(key)) {
                 current = current.reference;
-            } else if (current.keyValuePair.key == key) {
-                inThisList = true;
+            } else if (current.keyValuePair.key.equals(key)) {
+                return true;
             }
         }
-        return inThisList;
+        return false;
     }
 
 
