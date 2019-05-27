@@ -85,3 +85,6 @@ Lecture 1: [Insertion Sort](./src/main/java/insertionsort/insertionSortLecture.m
    
 Lecture 2: [Merge Sort](./src/main/java/mergesort/lecture.md)
            [Implementation](./src/main/java/mergesort/MergeSort.java) 
+           
+Lecture 3: [Quick Sort]()
+           [Implementation]() 
