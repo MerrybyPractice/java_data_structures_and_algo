@@ -66,7 +66,6 @@ public class Hashtable {
         keyValuePair.value = value;
 
         //store the pair in the array at the proper given index
-        System.out.println(index + key + value);
         //TODO: check for null linked list, render init obsolete
         buckets[index].insert(keyValuePair);
     }

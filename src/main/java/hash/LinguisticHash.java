@@ -21,11 +21,21 @@ public class LinguisticHash {
 
         int index = 1;
 
-        char[] array = key.toCharArray();
+        String translatedKey = translation.toString();
 
-        for (char c : array) {
+        char[] array = translatedKey.toCharArray();
+
+        for (int i = 0; i < array.length; i++) {
+
+            int c = array[i];
+
+            c *= i;
+
             index *= c;
         }
+
+        index *= 599;
+
         return index;
     }
 

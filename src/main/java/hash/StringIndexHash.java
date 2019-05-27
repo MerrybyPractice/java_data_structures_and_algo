@@ -4,7 +4,7 @@ public class StringIndexHash {
     public static int hash(String key) {
         char[] array = key.toCharArray();
 
-        int index = 0;
+        int index = 1;
 
         for (int i = 0; i < array.length; i++) {
 
@@ -14,6 +14,8 @@ public class StringIndexHash {
 
             index *= c;
         }
+
+        index *= 599;
 
         return index;
     }
