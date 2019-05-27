@@ -1,4 +1,4 @@
-#hash package 
+# hashpackage
 
 I find hashing and other cryptography concepts fascinating, so when starting my code challenge on the topic during Java 
 401 I wanted to set up my package to be scalable and encourage further experimentation. Some of these will be repeated from
