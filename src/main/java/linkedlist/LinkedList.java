@@ -49,20 +49,20 @@ public class LinkedList<generic> {
     }
 
     public void append(generic value) {
+        if (this.head == null) {
+            this.insert(value);
+        } else {
+            NodeConstructor<generic> current = this.head;
 
-        NodeConstructor<generic> current = this.head;
+            while (current.reference != null) {
+                current = current.reference;
+            }
 
-        while (current.reference != null) {
-            current = current.reference;
-        }
+            NodeConstructor<generic> newNode = new NodeConstructor<>(value, null);
 
-        NodeConstructor<generic> newNode = new NodeConstructor<>(value, null);
-
-        try {
             current.reference = newNode;
-        } catch (NullPointerException ex) {
-            System.out.println("I see that you are trying to append a node to an empty list. Instead of using the append method for this operation, I would recommend you try the insert method instead, to create an initial head. I am sure you will find that it meets your needs more thoroughly than append in this case. Once you have a single node created, you are able to use append with abandon.");
         }
+
     }
 
 
