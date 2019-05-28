@@ -74,6 +74,23 @@
     ## Approach and Efficiency 
     I based this method closely on the FizzBuzz and Breadth First trees, employing a while loop to do the traversal and a
     queue to do the traversal. It should have O(n) space and time efficiency.  
+    
+11. [HashTable](./src/main/java/hash/Hashtable.java)
+    ## Challenge 
+       Write a class that will create and manage a hash table. For further information, see the hashtable readme [here](./src/main/java/hash/README.md). 
+
+12. [RepeatedWord](./src/main/java/hash/RepeatedWord.java)
+    ![whiteboard](./assets/dupword.jpeg)
+    
+    ## Challenge 
+    Write a method that will identify and return the first duplicate word in a string. 
+    
+    ## Approach and Efficiency
+    
+    Using a hash set and a for each, this approach should be O(N) for time and space.        
+   
+       
+    
 
 Lecture Series 
 
