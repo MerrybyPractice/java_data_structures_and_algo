@@ -5,13 +5,27 @@ import linkedlist.NodeConstructor;
 
 public class Hashtable {
 
-    private static hash.LinkedList[] buckets = new hash.LinkedList[1024];
+    private hash.LinkedList[] buckets = new hash.LinkedList[1024];
 
 
     public static class KeyValuePair {
 
-        public static String key;
-        public static String value;
+        public String key;
+        public String value;
+
+        public int intKey;
+        public int intValue;
+
+
+        public KeyValuePair() {
+            this.key = key;
+            this.value = value;
+        }
+
+        public KeyValuePair(int intKey, int intValue) {
+            this.intKey = intKey;
+            this.intValue = intValue;
+        }
     }
 
 
@@ -37,6 +51,15 @@ public class Hashtable {
         int hash = BasicHash.hash(key);
 
         //convert key to index
+        hash %= buckets.length;
+
+        return Math.abs(hash);
+    }
+
+    public int findIndex(int key) {
+
+        int hash = BasicHash.hash(key);
+
         hash %= buckets.length;
 
         return Math.abs(hash);
@@ -70,6 +93,17 @@ public class Hashtable {
         buckets[index].insert(keyValuePair);
     }
 
+    public void add(int key, int value) {
+
+        int index = findIndex(key);
+
+        KeyValuePair keyValuePair = new KeyValuePair(key, value);
+
+        buckets[index].insert(keyValuePair);
+
+
+    }
+
     //get
     public KeyValuePair get(String inputKey) {
         KeyValuePair returnValue = new KeyValuePair();
@@ -95,6 +129,26 @@ public class Hashtable {
         return returnValue;
     }
 
+    public KeyValuePair get(int inputKey) {
+        int index = findIndex(inputKey);
+        KeyValuePair returnValue = new KeyValuePair(0, 0);
+
+        //TODO: add ints to linked list
+        if (buckets[index].includes(inputKey)) {
+            hash.LinkedList.Node current = buckets[index].getHead();
+
+            if (current.keyValuePair.intKey != inputKey) {
+                current = current.reference;
+            } else if (current.keyValuePair.intKey == inputKey) {
+                returnValue = current.keyValuePair;
+            }
+        } else {
+            returnValue.key = "key not found";
+            returnValue.value = "please try again with a different key";
+        }
+        return returnValue;
+    }
+
 
     //contains
     public boolean contains(String key) {
@@ -113,6 +167,22 @@ public class Hashtable {
         return false;
     }
 
+    public boolean contains(int key) {
+
+        int index = findIndex(key);
+
+        LinkedList.Node current = buckets[index].getHead();
+
+        while (current != null) {
+
+            if (!current.keyValuePair.key.equals(key)) {
+                current = current.reference;
+            } else if (current.keyValuePair.intKey == key) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     //TODO: add load factor recognition and growth
 }

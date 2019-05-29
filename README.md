@@ -87,8 +87,17 @@
     
     ## Approach and Efficiency
     
-    Using a hash set and a for each, this approach should be O(N) for time and space.        
+    Using a hash set and a for each, this approach should be O(N) for time and space.
+
+13.[TreeIntersection](./src/main/java/hash/TreeIntersection.java)
+    [!whiteboard](./assets/treeintersection.jpg)
+    
+   ## Challenge 
+   Write a method that will identify and return a collection of matching values between binary trees. 
    
+   ##Approach and Efficiency 
+   I opted to use a hash table for optimal look up time, but needed to implement three different array lists which destroys  
+   my big O space. 
        
     
 
