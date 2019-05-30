@@ -90,15 +90,24 @@
     Using a hash set and a for each, this approach should be O(N) for time and space.
 
 13.[TreeIntersection](./src/main/java/hash/TreeIntersection.java)
-    [!whiteboard](./assets/treeintersection.jpg)
+    ![whiteboard](./assets/treeintersection.jpg)
     
    ## Challenge 
    Write a method that will identify and return a collection of matching values between binary trees. 
    
-   ##Approach and Efficiency 
+   ## Approach and Efficiency 
    I opted to use a hash table for optimal look up time, but needed to implement three different array lists which destroys  
    my big O space. 
        
+14.[LeftJoin]()
+    ![whiteboard](./assets/IMG_1747_50.jpeg)
+    
+   ## Challenge 
+   Write a method that will merge and return two hash tables. 
+   
+   ## Approach and Efficiency
+   My proposed approach makes use of the way my hashtable inherently handles collisions. Due to the for each loop, it will 
+   have a O(n) time, although it does not make any additional collections so I believe has O(1) space. 
     
 
 Lecture Series 
