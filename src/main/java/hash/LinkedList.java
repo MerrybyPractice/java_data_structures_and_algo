@@ -9,9 +9,9 @@ public class LinkedList {
         public Hashtable.KeyValuePair keyValuePair;
         public Node reference;
 
-        public Node(Hashtable.KeyValuePair keyValuePair, @Nullable Node refrence) {
+        public Node(Hashtable.KeyValuePair keyValuePair, @Nullable Node reference) {
             this.keyValuePair = keyValuePair;
-            this.reference = refrence;
+            this.reference = reference;
 
         }
 
@@ -42,6 +42,22 @@ public class LinkedList {
             if (current.keyValuePair.key != key) {
                 current = current.reference;
             } else if (current.keyValuePair.key == key) {
+                inThisList = true;
+            }
+        }
+
+        return inThisList;
+    }
+
+    public boolean includes(int key) {
+        Node current = this.head;
+
+        boolean inThisList = false;
+
+        while ((current != null) && (inThisList == false)) {
+            if (current.keyValuePair.intKey != key) {
+                current = current.reference;
+            } else if (current.keyValuePair.intKey == key) {
                 inThisList = true;
             }
         }

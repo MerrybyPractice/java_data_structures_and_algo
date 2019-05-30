@@ -23,7 +23,7 @@ public class BinaryTree {
 
     //inOrder traversal
 
-    public ArrayList inOrderTraversal(NodeConstructor current, ArrayList inOrderArray) {
+    public static ArrayList inOrderTraversal(NodeConstructor current, ArrayList inOrderArray) {
 
         if (current.leftChild != null) {
             inOrderTraversal(current.leftChild, inOrderArray);
