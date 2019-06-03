@@ -108,7 +108,29 @@
    ## Approach and Efficiency
    My proposed approach makes use of the way my hashtable inherently handles collisions. Due to the for each loop, it will 
    have a O(n) time, although it does not make any additional collections so I believe has O(1) space. 
+
+15.[Graph](./src/main/java/graph/graph.java)
     
+   ## Challenge 
+   Write a Graph with methods for: 
+   
+   - graph.addNode(String value)
+        Takes a value and creates a linked list in the Array List with that as the head. 
+   - graph.addEdge(int weight, int index1, int index2)
+        Adds an edge between two indexes with the given weight. This edge is directional from index1 to index2. 
+   - graph.getNodes()
+        Prints out all nodes currently in the graph. 
+   - graph.getNeighbors()
+        Prints out all the neighbors of a given node and their edge weights. The first value in this list will be the given node. 
+   - graph.getSize()
+        Returns an integer of the size of the graph.
+        
+   ## Approach and Efficiency
+   
+   The graph is represented by an adjacency list. This list is simply an array list of linked lists - allowing for flexibility in both the number of nodes 
+   and in the number of edges added to and from each node.     
+   
+
 
 Lecture Series 
 
