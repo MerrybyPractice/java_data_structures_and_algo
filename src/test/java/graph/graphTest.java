@@ -18,12 +18,12 @@ public class graphTest {
         ArrayList<LinkedList> adjacencyList = new ArrayList<>();
         graph.setAdjacencyList(adjacencyList);
 
-        assertEquals(0, graph.adjacencyList.size());
+        assertEquals("Adjacency List has size before nodes are added", 0, graph.adjacencyList.size());
 
         graph.addNode("One");
 
-        assertEquals(1, graph.adjacencyList.size());
-        assertEquals("One", (graph.adjacencyList.get(0).getFirst()));
+        assertEquals("Adjacency List has wrong size after adding a single node", 1, graph.adjacencyList.size());
+        assertEquals("First Value of first node Adjacency List is incorrect", "One", (graph.adjacencyList.get(0).getFirst()));
 
     }
 
@@ -38,19 +38,19 @@ public class graphTest {
 
         graph.addNode("One");
 
-        assertEquals(1, graph.adjacencyList.get(0).size());
+        assertEquals("Node One has an Incorrect length", 1, graph.adjacencyList.get(0).size());
 
         graph.addNode("Two");
 
         graph.addEdge(3, 0, 1);
 
-        assertEquals(2, graph.adjacencyList.get(0).size());
+        assertEquals("After adding an edge, Node One has an incorrect length", 2, graph.adjacencyList.get(0).size());
 
         Hashtable.KeyValuePair keyValuePair = new Hashtable.KeyValuePair(1, 3);
 
         Object node = graph.adjacencyList.get(0).getLast();
 
-        assertEquals(keyValuePair.getClass(), node.getClass());
+        assertEquals("The Adjacency List is not handling KeyValuePairs correctly", keyValuePair.getClass(), node.getClass());
 
     }
     //A collection of all nodes can be properly retrieved from the graph
@@ -67,16 +67,16 @@ public class graphTest {
 
         ArrayList nodeList = graph.getNodes();
 
-        assertEquals("One", nodeList.get(0));
-        assertEquals("Three", nodeList.get(1));
-        assertEquals(" ", nodeList.get(2));
+        assertEquals("Node Search is not coming back with a correct first value", "One", nodeList.get(0));
+        assertEquals("Node Search is not coming back with a correct second value", "Three", nodeList.get(1));
+        assertEquals("Node Search is not coming back with a correct third value", " ", nodeList.get(2));
 
-        assertEquals(3, nodeList.size());
+        assertEquals("Get Nodes is not returning the correct size", 3, nodeList.size());
 
         graph.addEdge(4, 0, 2);
 
         //proves that this only returns the nodes and is not impacted by edges
-        assertEquals(3, nodeList.size());
+        assertEquals("Adding an edge is impacting get nodes", 3, nodeList.size());
     }
 
     //All appropriate neighbors can be retrieved from the graph
@@ -90,7 +90,7 @@ public class graphTest {
         graph.addNode("Two");
         graph.addNode("Three");
 
-        assertEquals("Two", graph.adjacencyList.get(1).getFirst());
+        assertEquals("Adjacency List is returning incorrect value for first node at index 1", "Two", graph.adjacencyList.get(1).getFirst());
 
         assertNull(graph.getNeighbors("Two"));
 
@@ -98,8 +98,8 @@ public class graphTest {
         graph.addEdge(2, 1, 2);
 
 
-        assertEquals(3, graph.getNeighbors("Two").size());
-        assertEquals(graph.getNeighbors("Two").get(1).getClass(), graph.getNeighbors("Two").get(1).getClass());
+        assertEquals("Get Neighbors is not returning correctly", 3, graph.getNeighbors("Two").size());
+        assertEquals("Get Neighbors is not handling key value pairs correctly", graph.getNeighbors("Two").get(1).getClass(), graph.getNeighbors("Two").get(1).getClass());
     }
 
     //Neighbors are returned with the weight between nodes included
@@ -128,12 +128,12 @@ public class graphTest {
         Hashtable.KeyValuePair threeToTwo = (Hashtable.KeyValuePair) graph.getNeighbors("Three").get(2);
 
 
-        assertEquals(2, oneToTwo.intValue);
-        assertEquals(3, oneToThree.intValue);
-        assertEquals(4, twoToOne.intValue);
-        assertEquals(5, twoToThree.intValue);
-        assertEquals(1, threeToOne.intValue);
-        assertEquals(0, threeToTwo.intValue);
+        assertEquals("Weight is not coming back correctly from getNeighbors", 2, oneToTwo.intValue);
+        assertEquals("Weight is not coming back correctly from getNeighbors", 3, oneToThree.intValue);
+        assertEquals("Weight is not coming back correctly from getNeighbors", 4, twoToOne.intValue);
+        assertEquals("Weight is not coming back correctly from getNeighbors", 5, twoToThree.intValue);
+        assertEquals("Weight is not coming back correctly from getNeighbors", 1, threeToOne.intValue);
+        assertEquals("Weight is not coming back correctly from getNeighbors", 0, threeToTwo.intValue);
     }
 
     //The proper size is returned, representing the number of nodes in the graph
@@ -152,16 +152,15 @@ public class graphTest {
         Integer five = 5;
         Integer six = 6;
 
-        assertEquals(five, graph.getSize());
+        assertEquals("Get Size is not returning correctly", five, graph.getSize());
 
         graph.addNode("Six");
 
-        assertEquals(six, graph.getSize());
+        assertEquals("Get Size is not returning correctly", six, graph.getSize());
 
-        //proves that edges do not impact size
         graph.addEdge(0, 1, 4);
 
-        assertEquals(six, graph.getSize());
+        assertEquals("Adding an edge is impacting get size", six, graph.getSize());
     }
 
     //A graph with only one node and edge can be properly returned
@@ -176,11 +175,11 @@ public class graphTest {
 
         Integer one = 1;
 
-        assertEquals(one, graph.getSize());
-        assertNotNull(graph.getNeighbors("Only"));
-        assertEquals(0, only.intKey);
-        assertEquals(5, only.intValue);
-        assertEquals(1, graph.getNodes().size());
+        assertEquals("Is not returning a size of one correctly", one, graph.getSize());
+        assertNotNull("Is not retuning a single neighbor correctly", graph.getNeighbors("Only"));
+        assertEquals("Is not returning a single connection", 0, only.intKey);
+        assertEquals("Is not returning a single weight", 5, only.intValue);
+        assertEquals("Get nodes is not handling a single node well", 1, graph.getNodes().size());
     }
 
     //An empty graph properly returns null
@@ -190,9 +189,9 @@ public class graphTest {
         ArrayList<LinkedList> adjacencyList = new ArrayList<>();
         graph.setAdjacencyList(adjacencyList);
 
-        assertNull(graph.getSize());
-        assertNull(graph.getNodes());
-        assertEquals(0, adjacencyList.size());
+        assertNull("get size is not handling null", graph.getSize());
+        assertNull("get nodes is not handling null", graph.getNodes());
+        assertEquals("Adjacency List has length when it should be empty", 0, adjacencyList.size());
     }
 
 
