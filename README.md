@@ -109,7 +109,7 @@
    My proposed approach makes use of the way my hashtable inherently handles collisions. Due to the for each loop, it will 
    have a O(n) time, although it does not make any additional collections so I believe has O(1) space. 
 
-15.[Graph](./src/main/java/graph/graph.java)
+15.[Graph](./src/main/java/graph/Graph.java)
     
    ## Challenge 
    Write a Graph with methods for: 
@@ -129,6 +129,19 @@
    
    The graph is represented by an adjacency list. This list is simply an array list of linked lists - allowing for flexibility in both the number of nodes 
    and in the number of edges added to and from each node.     
+   
+
+16.[Breadth First Traversal of a Graph](./src/main/java/graph/BreadthFirstGraph.java)
+    ![Whiteboard](./assets/IMG_1767_50.jpeg)
+    
+  ## Challenge 
+  
+  Write a breadth first traversal of a graph that takes in a node and returns a collection of nodes. 
+  
+  ## Approach and Efficiency 
+  
+  I opted to call a recursive function within an for each loop, targeting the key value of each edge. Then it will return 
+  a hash table of all the nodes. 
    
 
 
