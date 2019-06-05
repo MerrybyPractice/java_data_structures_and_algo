@@ -149,7 +149,8 @@
      
   ## Challenge 
   
-  The challenge was to write a class that would take in a Array of cities and graphs 
+  The challenge was to write a class that would take in a Array of cities and graphs, and return if they could be reached 
+  in a a series of single flights as well as the price to make the trip. 
    
 
 
