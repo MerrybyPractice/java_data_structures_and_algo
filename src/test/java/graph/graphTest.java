@@ -17,12 +17,12 @@ public class graphTest {
 
         graph.Graph test = new graph.Graph();
 
-        assertEquals("Adjacency List has size before nodes are added", 0, test.adjacencyList.size());
+        assertEquals("Adjacency List has size before nodes are added", 0, test.getAdjacencyList().size());
 
         test.addNode("One");
 
-        assertEquals("Adjacency List has wrong size after adding a single node", 1, test.adjacencyList.size());
-        assertEquals("First Value of first node Adjacency List is incorrect", "One", (test.adjacencyList.get(0).getFirst()));
+        assertEquals("Adjacency List has wrong size after adding a single node", 1, test.getAdjacencyList().size());
+        assertEquals("First Value of first node Adjacency List is incorrect", "One", (test.getAdjacencyList().get(0).getFirst()));
 
     }
 
@@ -38,17 +38,17 @@ public class graphTest {
 
         test.addNode("One");
 
-        assertEquals("Node One has an Incorrect length", 1, test.adjacencyList.get(0).size());
+        assertEquals("Node One has an Incorrect length", 1, test.getAdjacencyList().get(0).size());
 
         test.addNode("Two");
 
         test.addEdge(3, 0, 1);
 
-        assertEquals("After adding an edge, Node One has an incorrect length", 2, test.adjacencyList.get(0).size());
+        assertEquals("After adding an edge, Node One has an incorrect length", 2, test.getAdjacencyList().get(0).size());
 
         Hashtable.KeyValuePair keyValuePair = new Hashtable.KeyValuePair(1, 3);
 
-        Object node = test.adjacencyList.get(0).getLast();
+        Object node = test.getAdjacencyList().get(0).getLast();
 
         assertEquals("The Adjacency List is not handling KeyValuePairs correctly", keyValuePair.getClass(), node.getClass());
 
@@ -88,7 +88,7 @@ public class graphTest {
         test.addNode("Two");
         test.addNode("Three");
 
-        assertEquals("Adjacency List is returning incorrect value for first node at index 1", "Two", test.adjacencyList.get(1).getFirst());
+        assertEquals("Adjacency List is returning incorrect value for first node at index 1", "Two", test.getAdjacencyList().get(1).getFirst());
 
         assertNull(test.getNeighbors("Two"));
 
@@ -168,7 +168,7 @@ public class graphTest {
 
         test.addNode("Only");
         test.addEdge(5, 0, 0);
-        Hashtable.KeyValuePair only = (Hashtable.KeyValuePair) test.adjacencyList.get(0).getLast();
+        Hashtable.KeyValuePair only = (Hashtable.KeyValuePair) test.getAdjacencyList().get(0).getLast();
 
         Integer one = 1;
 
@@ -188,7 +188,7 @@ public class graphTest {
 
         assertNull("get size is not handling null", test.getSize());
         assertNull("get nodes is not handling null", test.getNodes());
-        assertEquals("Adjacency List has length when it should be empty", 0, test.adjacencyList.size());
+        assertEquals("Adjacency List has length when it should be empty", 0, test.getAdjacencyList().size());
     }
 
 
