@@ -7,7 +7,7 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class GetEdges {
+public class GetEdges extends Graph {
     ArrayList<String> trackingArray;
     int price;
     int tracking;
