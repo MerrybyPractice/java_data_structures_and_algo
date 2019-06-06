@@ -151,6 +151,20 @@
   
   The challenge was to write a class that would take in a Array of cities and graphs, and return if they could be reached 
   in a a series of single flights as well as the price to make the trip. 
+
+18. [Depth First](./src/main/java/graph/DepthFirst.java)
+     ![Whiteboard](./assets/depthFirst.jpeg)
+     
+   ## Challenge 
+   
+   In this challenge, we were asked write a depth first pre-order graph traversal. 
+   
+   ## Approach and Efficiency 
+   
+   I opted to return a hashset of nodes, to ensure that each one is only added once. Additionally, I kept track of these 
+   nodes with a  queue so that I could ensure the ordering of the traversal. In order to keep this method readable and 
+   modular, I have divided it into two smaller ones - DepthFirst and InOrderTraversal - which pass around the same data
+   structures. InOrderTraversal is called twice from within DepthFirst.   
    
 
 

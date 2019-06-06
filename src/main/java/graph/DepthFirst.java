@@ -24,14 +24,14 @@ public class DepthFirst extends Graph {
         } else {
 
             int nextList = adjacencyList.indexOf(tracking.remove());
-            LinkedList nextNode = s adjacencyList.get(nextList);
+            LinkedList nextNode = adjacencyList.get(nextList);
             inOrderTraversal(nextNode, tracking);
         }
         return returnCollection;
     }
 
     protected Queue inOrderTraversal(LinkedList node, Queue tracking) {
-        //just going through a single LL - top function needs to handle all finding of linked lists within the array
+
         for (Object edge : node) {
             if (returnCollection.contains(edge)) {
                 continue;
