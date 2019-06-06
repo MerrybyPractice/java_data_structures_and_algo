@@ -1,7 +1,6 @@
 package graph;
 
 import hash.Hashtable;
-import sun.awt.image.ImageWatched;
 
 import java.util.LinkedList;
 
@@ -28,8 +27,8 @@ public class BreadthFirstGraph extends Graph {
 
     public LinkedList findAdjacencyList(String node, Graph thisGraph) {
 
-        int idx = thisGraph.adjacencyList.indexOf(node);
-        LinkedList search = thisGraph.adjacencyList.get(idx);
+        int idx = thisGraph.getAdjacencyList().indexOf(node);
+        LinkedList search = thisGraph.getAdjacencyList().get(idx);
 
         return search;
 

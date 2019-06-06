@@ -142,6 +142,15 @@
   
   I opted to call a recursive function within an for each loop, targeting the key value of each edge. Then it will return 
   a hash table of all the nodes. 
+ 
+17. [Get Edges](./src/main/java/graph/GetEdges.java)
+     ![Whiteboard](./assets/getEdges.jpg)
+     ![Whiteboard](./assets/getEdges2.jpg)
+     
+  ## Challenge 
+  
+  The challenge was to write a class that would take in a Array of cities and graphs, and return if they could be reached 
+  in a a series of single flights as well as the price to make the trip. 
    
 
 

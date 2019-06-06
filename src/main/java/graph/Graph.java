@@ -10,7 +10,7 @@ public class Graph {
 
     //adjacency list
 
-    public ArrayList<LinkedList> adjacencyList = new ArrayList<>();
+    private ArrayList<LinkedList> adjacencyList = new ArrayList<>();
 
     public void setAdjacencyList(ArrayList<LinkedList> adjacencyList) {
         this.adjacencyList = adjacencyList;
@@ -20,15 +20,15 @@ public class Graph {
     public int addNode(String value) {
         LinkedList node = new LinkedList();
         node.add(value);
-        adjacencyList.add(node);
-        return adjacencyList.indexOf(node);
+        getAdjacencyList().add(node);
+        return getAdjacencyList().indexOf(node);
     }
 
     //AddEdge()
     public String addEdge(@Nullable int weight, int index1, int index2) {
-        if ((adjacencyList.get(index1).size() > 0) && (adjacencyList.get(index2).size() > 0)) {
+        if ((getAdjacencyList().get(index1).size() > 0) && (getAdjacencyList().get(index2).size() > 0)) {
 
-            LinkedList linkedList = adjacencyList.get(index1);
+            LinkedList linkedList = getAdjacencyList().get(index1);
             Hashtable.KeyValuePair kvp = new Hashtable.KeyValuePair(index2, weight);
             linkedList.addLast(kvp);
 
@@ -44,11 +44,11 @@ public class Graph {
 
         ArrayList returnList = new ArrayList();
 
-        if (adjacencyList.size() > 0) {
+        if (getAdjacencyList().size() > 0) {
 
 
             for (LinkedList list :
-                    adjacencyList) {
+                    getAdjacencyList()) {
                 Object first = list.getFirst();
                 returnList.add(first);
             }
@@ -73,13 +73,13 @@ public class Graph {
         int index;
 
 
-        for (LinkedList list : adjacencyList) {
+        for (LinkedList list : getAdjacencyList()) {
 
             if (list.getFirst().toString().equals(value)) {
-                index = adjacencyList.indexOf(list);
+                index = getAdjacencyList().indexOf(list);
 
                 try {
-                    LinkedList userNode = adjacencyList.get(index);
+                    LinkedList userNode = getAdjacencyList().get(index);
 
                     for (Object element : userNode) {
 
@@ -103,12 +103,15 @@ public class Graph {
     //Size()s
     public @javax.annotation.Nullable
     Integer getSize() {
-        if (adjacencyList.size() > 0) {
-            return adjacencyList.size();
+        if (getAdjacencyList().size() > 0) {
+            return getAdjacencyList().size();
         } else {
             return null;
         }
     }
 
+    public ArrayList<LinkedList> getAdjacencyList() {
+        return adjacencyList;
+    }
 }
 
