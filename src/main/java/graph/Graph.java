@@ -6,24 +6,18 @@ import hash.Hashtable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-/*
- *   node --> attached to node --> attached to node
- *   each linked list represents one node
- * */
-
-public class graph {
+public class Graph {
 
     //adjacency list
 
+    public ArrayList<LinkedList> adjacencyList = new ArrayList<>();
 
-    public static ArrayList<LinkedList> adjacencyList = new ArrayList<>();
-
-    public static void setAdjacencyList(ArrayList<LinkedList> adjacencyList) {
-        graph.adjacencyList = adjacencyList;
+    public void setAdjacencyList(ArrayList<LinkedList> adjacencyList) {
+        this.adjacencyList = adjacencyList;
     }
     //AddNode()
 
-    public static int addNode(String value) {
+    public int addNode(String value) {
         LinkedList node = new LinkedList();
         node.add(value);
         adjacencyList.add(node);
@@ -31,7 +25,7 @@ public class graph {
     }
 
     //AddEdge()
-    public static String addEdge(@Nullable int weight, int index1, int index2) {
+    public String addEdge(@Nullable int weight, int index1, int index2) {
         if ((adjacencyList.get(index1).size() > 0) && (adjacencyList.get(index2).size() > 0)) {
 
             LinkedList linkedList = adjacencyList.get(index1);
@@ -46,7 +40,7 @@ public class graph {
     }
 
     //GetNodes()
-    public static ArrayList getNodes() {
+    public ArrayList getNodes() {
 
         ArrayList returnList = new ArrayList();
 
@@ -72,7 +66,7 @@ public class graph {
      */
 
     //GetNeighbors()
-    public static ArrayList getNeighbors(String value) {
+    public ArrayList getNeighbors(String value) {
 
         ArrayList returnList = new ArrayList();
 
@@ -107,7 +101,7 @@ public class graph {
     }
 
     //Size()s
-    public static @javax.annotation.Nullable
+    public @javax.annotation.Nullable
     Integer getSize() {
         if (adjacencyList.size() > 0) {
             return adjacencyList.size();
