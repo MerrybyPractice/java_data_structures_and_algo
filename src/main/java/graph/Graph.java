@@ -10,7 +10,8 @@ public class Graph {
 
     //adjacency list
 
-    private ArrayList<LinkedList> adjacencyList = new ArrayList<>();
+    ArrayList<LinkedList> adjacencyList = new ArrayList<>();
+    LinkedList node;
 
     public void setAdjacencyList(ArrayList<LinkedList> adjacencyList) {
         this.adjacencyList = adjacencyList;
@@ -18,7 +19,7 @@ public class Graph {
     //AddNode()
 
     public int addNode(String value) {
-        LinkedList node = new LinkedList();
+        node = new LinkedList();
         node.add(value);
         getAdjacencyList().add(node);
         return getAdjacencyList().indexOf(node);
